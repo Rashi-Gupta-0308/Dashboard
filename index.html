@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rashi Gupta | Coding Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0d0d0d;
+      --purple: #9e40d6;
+      --yellow: #ffc107;
+      --card-bg: #1a1a1a;
+      --text-light: #e4e4e4;
+      --text-faded: #aaa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    .container {
+      background: var(--card-bg);
+      border-radius: 16px;
+      max-width: 500px;
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .avatar {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 3px solid var(--purple);
+    }
+
+    h2 {
+    font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+      margin: 0.5rem 0 0.2rem;
+      color: var(--yellow);
+    }
+
+    .details {
+      margin-top: 1rem;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+      color: var(--text-faded);
+    }
+
+    .detail-item img {
+      margin-right: 0.6rem;
+      width: 18px;
+      filter: brightness(1.5);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1.2rem;
+      font-size: 1.1rem;
+      color: var(--text-light);
+    }
+
+    .stats div strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--yellow);
+    }
+
+    .questions h3 {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--yellow);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.questions table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.questions th, 
+.questions td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #3a2a59; /* subtle purple border */
+}
+.questions td:first-child,
+.questions th:first-child {
+  text-align: left;
+}
+
+.questions thead {
+  background: linear-gradient(90deg, #6f42c1, #9e40d6);
+}
+
+.questions thead th {
+  color: white;
+  font-weight: 700;
+}
+
+.questions tbody tr:hover {
+  background-color: #2c1a4a;
+  cursor: default;
+}
+
+.questions td img {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 8px;
+  filter: brightness(1.4);
+}
+
+.questions td a.platform-link {
+  color: var(--yellow);
+  font-weight: 600;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+
+.questions td a.platform-link:hover {
+  color: #d8b4fe; /* lighter purple */
+}
+.platform-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust spacing between image and text */
+}
+
+
+.questions td a.view-btn {
+  padding: 6px 14px;
+  background-color: var(--purple);
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(158, 64, 214, 0.7);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.questions td a.view-btn:hover {
+  background-color: #6f42c1;
+  box-shadow: 0 0 14px #6f42c1;
+  color: #f3e8ff;
+}
+
+
+    .links {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      background: linear-gradient(135deg, var(--purple), var(--purple));
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: -2rem 0.4rem;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s, box-shadow 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--yellow);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 1rem;
+        max-height: 9vh;
+      }
+
+      .stats {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+.platform-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* spacing between image and text */
+}
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="profile">
+      <img src="./HeroImage.jpg" alt="Profile Image" class="avatar" />
+      <h2>Rashi Gupta</h2>
+
+      
+      <p>React Frontend Web Developer <br> Figma UI & Web Designer <br> B.Tech'26 @ MITS Gwalior</p>
+
+      <div class="stats">
+        <div><strong>CGPA</strong>8.82</div>
+        <div id="total-questions">
+  <strong>Total Questions</strong>
+  <span class="total-count">0</span>
+</div>
+
+      </div>
+    </div>
+
+    <div class="questions">
+  <h3>Solved Questions</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Platform</th>
+        <th>Solved Qs</th>
+        <th>Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Inside the <tbody> table rows, add ids to question count cells -->
+<tr>
+  <td class="platform-cell">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
+    <a href="https://leetcode.com/u/Rashi-Gupta/" target="_blank" class="platform-link">LeetCode</a>
+  </td>
+  <td id="leetcode">299</td>
+  <td><a href="https://leetcode.com/u/Rashi-Gupta/" target="_blank" class="view-btn">View</a></td>
+</tr>
+<tr>
+  <td class="platform-cell">
+    <img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo.svg" alt="CodeChef" />
+    <a href="https://www.codechef.com/users/rashi_2004" target="_blank" class="platform-link">CodeChef</a>
+  </td>
+  <td id="codechef">167</td>
+  <td><a href="https://www.codechef.com/users/rashi_2004" target="_blank" class="view-btn">View</a></td>
+</tr>
+<tr>
+  <td class="platform-cell">
+    <span style="display: flex; align-items: center; justify-content: center;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_rcOS0WOFxTz0nks6xp6gOKcl836Zb1j7w&s" alt="GFG" />
+    <a href="https://www.geeksforgeeks.org/user/rashi_gupta_19/" target="_blank" class="platform-link">GeeksforGeeks</a>
+  
+  </span></td>
+  <td id="gfg">101</td>
+  <td><a href="https://www.geeksforgeeks.org/user/rashi_gupta_19/" target="_blank" class="view-btn">View</a></td>
+</tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+    <div class="links">
+      <a href="https://drive.google.com/file/d/1fX_Rtgek9YF9XnF6eK06lf545zMvmbsZ/view?usp=sharing" target="_blank" class="button">View Resume</a>
+      <a href="https://my-portfolio-pi-teal-90.vercel.app/" target="_blank" class="button">View Portfolio</a>
+    </div>
+  </div>
+
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const leet = parseInt(document.getElementById("leetcode").textContent) || 0;
+    const chef = parseInt(document.getElementById("codechef").textContent) || 0;
+    const gfg = parseInt(document.getElementById("gfg").textContent) || 0;
+    const total = leet + chef + gfg;
+    document.querySelector("#total-questions .total-count").textContent = total;
+  });
+</script>
+
+</body>
+</html>
