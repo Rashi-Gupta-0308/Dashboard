@@ -110,6 +110,7 @@
     border-collapse: collapse;
     font-size: 1rem;
     color: var(--text-light);
+    margin-top: 3rem;
   }
 
   .questions th,
@@ -119,13 +120,14 @@
     border-bottom: 1px solid #3a2a59;
   }
 
-  .questions td:first-child,
-  .questions th:first-child {
+  .questions td:first-child{
     text-align: left;
+    
   }
 
   .questions thead {
     background: linear-gradient(90deg, #6f42c1, #9e40d6);
+    
   }
 
   .questions thead th {
@@ -265,7 +267,7 @@
       <div class="stats">
         <div><strong>CGPA</strong>8.82</div>
         <div id="total-questions">
-  <strong>Total Questions</strong>
+  <strong>Total Solved Qs</strong>
   <span class="total-count">0</span>
 </div>
 
@@ -273,11 +275,11 @@
     </div>
 
     <div class="questions">
-  <h3>Solved Questions</h3>
+  <!-- <h3>Solved Questions</h3> -->
   <table>
     <thead>
       <tr>
-        <th>Platform</th>
+        <th>All Platforms</th>
         <th>Solved Qs</th>
         <th>Profile</th>
       </tr>
@@ -289,7 +291,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
     <a href="https://leetcode.com/u/Rashi-Gupta/" target="_blank" class="platform-link">LeetCode</a>
   </td>
-  <td id="leetcode">299</td>
+  <td id="leetcode">leetcode</td>
   <td><a href="https://leetcode.com/u/Rashi-Gupta/" target="_blank" class="view-btn">View</a></td>
 </tr>
 <tr>
@@ -297,7 +299,7 @@
     <img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/logo.svg" alt="CodeChef" />
     <a href="https://www.codechef.com/users/rashi_2004" target="_blank" class="platform-link">CodeChef</a>
   </td>
-  <td id="codechef">167</td>
+  <td id="codechef">codechef</td>
   <td><a href="https://www.codechef.com/users/rashi_2004" target="_blank" class="view-btn">View</a></td>
 </tr>
 <tr>
@@ -307,7 +309,7 @@
     <a href="https://www.geeksforgeeks.org/user/rashi_gupta_19/" target="_blank" class="platform-link">GeeksforGeeks</a>
   
   </span></td>
-  <td id="gfg">101</td>
+  <td id="gfg">gfg</td>
   <td><a href="https://www.geeksforgeeks.org/user/rashi_gupta_19/" target="_blank" class="view-btn">View</a></td>
 </tr>
 
@@ -323,13 +325,16 @@
   </div>
 
   <script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const leet = parseInt(document.getElementById("leetcode").textContent) || 0;
-    const chef = parseInt(document.getElementById("codechef").textContent) || 0;
-    const gfg = parseInt(document.getElementById("gfg").textContent) || 0;
-    const total = leet + chef + gfg;
-    document.querySelector("#total-questions .total-count").textContent = total;
-  });
+    
+  const leetcode = 299
+  const codechef = 167
+  const gfg = 102
+  document.getElementById("leetcode").textContent = leetcode;
+  document.getElementById("codechef").textContent = codechef;
+  document.getElementById("gfg").textContent = gfg;
+
+  const total = leetcode + codechef + gfg;
+  document.querySelector(".total-count").textContent = total;
 </script>
 
 </body>
