@@ -329,7 +329,7 @@
   <script>
     
   const leetcode = 306
-  const codechef = 175
+  const codechef = 176
   const gfg = 120
   document.getElementById("leetcode").textContent = leetcode;
   document.getElementById("codechef").textContent = codechef;
@@ -337,6 +337,25 @@
 
   const total = leetcode + codechef + gfg;
   document.querySelector(".total-count").textContent = total;
+  
+  
+  
+  
+  
+  document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+  }, false);
+  document.onkeydown = function(e) {
+    if (e.keyCode == 123) return false; // F12
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false; // Ctrl+Shift+I
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false; // Ctrl+Shift+J
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false; // Ctrl+U (View Source)
+  }
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'u')) {
+      e.preventDefault();
+    }
+  });
 </script>
 
 </body>
